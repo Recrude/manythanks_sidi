@@ -98,7 +98,8 @@ footer {
 .message-block {
     width: 48.5vw;
 }
-#status-container {
+
+.loading-indicator {
     border-top: 1px solid #000;
     padding-top: .5rem;
 }
