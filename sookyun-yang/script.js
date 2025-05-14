@@ -1,6 +1,12 @@
 // 구글 스프레드시트 API 스크립트 URL
 // 여기에 구글 앱스 스크립트 배포 URL을 넣어주세요
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVvXS1pgPwBkZ9WpxL9xPY3MiFr45hfDq0IcNvkOq00CdY94ktnfwqLo0oNxLPowbG/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw7uR1zqagCILFUXxswxbYJRfUR8o2VHvJp6ZdWUXKnmCvzJUeiVxhIQ5zCbnlDsSdl/exec';
+
+// 시트 설정
+const SHEET_NAME = 'SookyunYang'; // 이 페이지의 댓글이 저장될 시트 이름
+
+// 페이지 로드시 시트 이름 확인용 로그
+console.log('사용할 시트 이름: ' + SHEET_NAME);
 
 // DOM 요소
 const commentForm = document.getElementById('commentForm');
@@ -8,7 +14,7 @@ const commentsContainer = document.getElementById('comments');
 const statusContainer = document.getElementById('status-container');
 
 // 캐싱 설정
-const CACHE_KEY = 'comments_cache';
+const CACHE_KEY = 'comments_cache_sookyun';
 const CACHE_EXPIRY = 300000; // 캐시 유효 시간 (밀리초, 현재는 5분)
 let lastFetchTime = 0;
 let isLoading = false;
@@ -202,6 +208,7 @@ async function submitComment(name, message, timestamp) {
     formData.append('name', name);
     formData.append('message', message);
     formData.append('timestamp', timestamp);
+    formData.append('sheet', SHEET_NAME); // 시트 이름 추가
     
     // 요청 타임아웃 설정
     const controller = new AbortController();
@@ -244,6 +251,7 @@ async function loadComments(silent = false) {
         
         const formData = new FormData();
         formData.append('action', 'getComments');
+        formData.append('sheet', SHEET_NAME); // 시트 이름 추가
         
         // 요청 타임아웃 설정
         const controller = new AbortController();

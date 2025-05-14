@@ -1,0 +1,23 @@
+/* 새로운 스타일 적용 */
+@font-face {
+    font-family: "SM3KGOTHIC-Regular";
+    src: url(./fonts/SM3KGOTHIC-Regular.woff2);
+}
+
+body {
+    font-family: "agchoijeongho-screen", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1 {
+    font-family: "SM3KGOTHIC-Regular";
+    font-size: 14rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.05em;
+    line-height: 1.2;
+}
+
