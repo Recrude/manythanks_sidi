@@ -1,6 +1,7 @@
 // 스프레드시트 ID를 입력하세요
-const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE';
-const SHEET_NAME = 'Comments';
+const SPREADSHEET_ID = '1IOHIcrfoqSCVufx7aNDTt3lHWKvZfiDqlpSlYC1qFv4';
+const DEFAULT_SHEET_NAME = 'Comments'; // 기본 시트 이름
+
 
 // 웹 앱으로 배포할 때 필요한 doGet, doPost 함수
 function doGet(e) {
@@ -24,7 +25,7 @@ function handleRequest(e) {
   if (action === 'addComment') {
     result = addComment(params);
   } else if (action === 'getComments') {
-    result = getComments();
+    result = getComments(params);
   }
   
   // JSONP 지원을 위한 콜백 파라미터 확인
@@ -40,15 +41,21 @@ function handleRequest(e) {
   }
 }
 
+// 시트 이름 결정 함수
+function getSheetName(params) {
+  return params.sheet || DEFAULT_SHEET_NAME;
+}
+
 // 댓글 추가 함수
 function addComment(params) {
   try {
     const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    let sheet = ss.getSheetByName(SHEET_NAME);
+    const sheetName = getSheetName(params);
+    let sheet = ss.getSheetByName(sheetName);
     
     // 시트가 없으면 새로 만들고 헤더 추가
     if (!sheet) {
-      sheet = ss.insertSheet(SHEET_NAME);
+      sheet = ss.insertSheet(sheetName);
       sheet.appendRow(['타임스탬프', '이름', '메시지']);
     }
     
@@ -72,10 +79,11 @@ function addComment(params) {
 }
 
 // 댓글 가져오기 함수
-function getComments() {
+function getComments(params) {
   try {
     const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-    const sheet = ss.getSheetByName(SHEET_NAME);
+    const sheetName = getSheetName(params);
+    const sheet = ss.getSheetByName(sheetName);
     
     // 시트가 없으면 빈 배열 반환
     if (!sheet) {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 스프레드시트 댓글 시스템</title>
+    <link rel="stylesheet" href="../../reset.css">
+    <link rel="stylesheet" href="../../style.css">
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'qal8fze',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+</head>
+<body>
+    <section class="container">
+        <img src="../../images/svg/symbol.svg" alt="logo" class="symbol">
+        <h1><br>양숙현 교수님,<br>감사합니다.</h1>
+
+        <div class="comment-list">
+            <div class="message-block">
+                <h3 class="dearprof">양숙현 교수님께</h3>
+            </div>
+            <div class="message-block">
+                <div id="comments">
+                    <div class="loading-indicator">댓글을 불러오는 중...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="comment-form">
+            <div class="message-block">
+                <h3 class="dearprof">댓글 작성</h3>
+            </div>
+            <div class="message-block">
+            <form id="commentForm" class="form-div">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" required placeholder="이름을 입력하세요">
+                    <div id="status-container"></div>
+                </div>
+                <div class="form-group content">
+                    <label for="message">메시지</label>
+                    <textarea id="message" name="message" rows="4" required placeholder="감사의 마음을 전해보세요"></textarea>
+                    
+                </div>
+                <button type="submit">댓글 작성</button>
+            </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+       <div class="column-2">
+            <p>2025.05.15.</p>
+            <p>스승의 날</p>
+        </div>
+        <div class="column-2">
+        <p>홍익시디 올림.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
