@@ -15,7 +15,7 @@ body {
 
 h1 {
     font-family: "SM3KGOTHIC-Regular";
-    font-size: 14rem;
+    font-size: 13vw;
     font-weight: 400;
     font-style: normal;
     letter-spacing: -0.05em;
@@ -52,9 +52,9 @@ footer {
 }
 
 .symbol {
-    width: 200px;
-    height: 200px;
-    margin: 1rem;
+    width: 12vw;
+    height: auto;
+    padding: 1.5vw 1vw;
 }
 .comment-list {
     display: flex;
@@ -73,7 +73,6 @@ footer {
     padding-top: .5rem;
 }
 .message-block {
-    
     width: 48.5vw;
 }
 #status-container {
@@ -124,13 +123,31 @@ button {
     border: 1px solid black;
 }
 button:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: yellow;
     transition: .5s;
 }
 .status-container {
     width: 20%;
     align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 10px;
+    }
+    .message-block, #left{
+        width: 16.167vw;
+    }
+    .message-block, #right{
+        width: 80.833vw;
+    }
+    .comment-container {
+        padding: 1vw;
+    }
+    footer {
+        padding: 2vw;
+    }
+
 }
 
 /* strong {
