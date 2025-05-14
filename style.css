@@ -153,9 +153,8 @@ button:hover {
     background-color: yellow;
     transition: .5s;
 }
-.status-container {
-    width: 20%;
-    align-items: flex-end;
+#name {
+    width: 110%;
 }
 
 @media (max-width: 768px) {
