@@ -103,6 +103,10 @@ footer {
     width: 48.5vw;
 }
 
+.message-block, #left{
+    min-height: 16rem;
+}
+
 .loading-indicator {
     border-top: 1px solid #000;
     padding-top: .5rem;
