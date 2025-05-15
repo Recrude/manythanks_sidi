@@ -3,7 +3,7 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw7uR1zqagCILFUXxswxbYJRfUR8o2VHvJp6ZdWUXKnmCvzJUeiVxhIQ5zCbnlDsSdl/exec';
 
 // 시트 설정
-const SHEET_NAME = 'YuseonPark'; // 이 페이지의 댓글이 저장될 시트 이름
+const SHEET_NAME = 'JaeyoungYun'; // 이 페이지의 댓글이 저장될 시트 이름
 
 // 페이지 로드시 시트 이름 확인용 로그
 console.log('사용할 시트 이름: ' + SHEET_NAME);
@@ -14,7 +14,7 @@ const commentsContainer = document.getElementById('comments');
 const statusContainer = document.getElementById('status-container');
 
 // 캐싱 설정
-const CACHE_KEY = 'comments_cache_yuseon';
+const CACHE_KEY = 'comments_cache_jaeyoung';
 const CACHE_EXPIRY = 300000; // 캐시 유효 시간 (밀리초, 현재는 5분)
 let lastFetchTime = 0;
 let isLoading = false;
