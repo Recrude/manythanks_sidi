@@ -70,9 +70,9 @@ footer {
 }
 
 .symbol {
-    width: 12vw;
+    width: 13.2vw;
     height: auto;
-    padding: 1.5vw 1vw;
+    padding: 1.5vw 1.4vw;
 }
 .comment-list {
     display: flex;
